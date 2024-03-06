@@ -3,14 +3,7 @@ from api import ModelManager
 from evaluation import evaluation
 
 import sys
-import datetime
-
-def is_valid_date(date):
-    try:
-        datetime.datetime.strptime(date, '%d/%m/%Y')
-        return True
-    except ValueError:
-        return False
+from utils.datetime import is_valid_date
 
 def printUsage():
     print("""
