@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+keras
+tensorflow
+kafka-python
+s3fs
+fastapi
