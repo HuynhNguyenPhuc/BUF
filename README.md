@@ -37,6 +37,16 @@ If you choose S3, you will create a Redshift data warehouse from S3. Read this [
 #### MongoDB
 If you choose MongoDB, before running Producer and Consumer, create a cluster on Atlas and set up a database with three collections: HNX, HOSE, UPCOM
 
+### Run the server using Uvicorn
+For development, run this command
+```
+uvicorn main:app --reload
+```
+For production, run this command
+```
+uvicorn main:app --host <IP-address> --port <port-number>
+```
+
 ## Evaluation LSTM model
 | Exchange   |   MSE     |  RMSE     |   MAPE    | R<sup>2</sup> Score |
 | :----:     | :-------: | :-------: | :-------: | :-----------------: |
