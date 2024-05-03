@@ -6,3 +6,4 @@ tensorflow
 kafka-python
 s3fs
 fastapi
+uvicorn[standard]
