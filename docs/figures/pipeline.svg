@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" font-family="system-ui,-apple-system,Segoe UI,sans-serif" role="img" aria-labelledby="pipeT pipeD">
+<title id="pipeT">Benchmark pipeline</title>
+<desc id="pipeD">Daily prices become features and 50-day windows. Four baselines and six neural networks each predict a return, which is converted to a price and scored.</desc>
+<defs>
+<marker id="pipeArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker>
+</defs>
+<rect x="8" y="8" width="704" height="314" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+
+<rect x="30" y="26" width="190" height="44" rx="8" fill="#fff" stroke="#475569" stroke-width="1.4"/>
+<text x="125" y="46" text-anchor="middle" font-size="13" fill="#1e293b">Daily open, high, low,</text>
+<text x="125" y="62" text-anchor="middle" font-size="13" fill="#1e293b">close and volume</text>
+<path d="M220 48 H262" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+<rect x="266" y="26" width="190" height="44" rx="8" fill="#fff" stroke="#475569" stroke-width="1.4"/>
+<text x="361" y="46" text-anchor="middle" font-size="13" fill="#1e293b">5 features per day,</text>
+<text x="361" y="62" text-anchor="middle" font-size="13" fill="#1e293b">standardized on train</text>
+<path d="M456 48 H498" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+<rect x="502" y="26" width="190" height="44" rx="8" fill="#fff" stroke="#475569" stroke-width="1.4"/>
+<text x="597" y="46" text-anchor="middle" font-size="13" fill="#1e293b">Windows of 50 days</text>
+<text x="597" y="62" text-anchor="middle" font-size="13" fill="#1e293b">shape 50 × 5</text>
+
+<path d="M597 70 V92 H175 V104" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+<path d="M597 92 H500 V104" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+
+<rect x="30" y="108" width="290" height="124" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<text x="175" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Baselines</text>
+<g font-size="13" fill="#1e293b" text-anchor="middle">
+<rect x="44" y="142" width="124" height="34" rx="6" fill="#fff" stroke="#94a3b8"/><text x="106" y="164">Naive</text>
+<rect x="182" y="142" width="124" height="34" rx="6" fill="#fff" stroke="#94a3b8"/><text x="244" y="164">Ridge</text>
+<rect x="44" y="184" width="124" height="34" rx="6" fill="#fff" stroke="#94a3b8"/><text x="106" y="206">LightGBM</text>
+<rect x="182" y="184" width="124" height="34" rx="6" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/><text x="244" y="206">ARIMA</text>
+</g>
+
+<rect x="350" y="108" width="342" height="124" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+<text x="521" y="130" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Neural networks</text>
+<g font-size="13" fill="#1e293b" text-anchor="middle">
+<rect x="364" y="142" width="96" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="412" y="164">LSTM</text>
+<rect x="470" y="142" width="96" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="518" y="164">GRU</text>
+<rect x="576" y="142" width="102" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="627" y="164">MLP</text>
+<rect x="364" y="184" width="96" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="412" y="206">DLinear</text>
+<rect x="470" y="184" width="96" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="518" y="206">CNN</text>
+<rect x="576" y="184" width="102" height="34" rx="6" fill="#fff" stroke="#2563eb"/><text x="627" y="206">Transformer</text>
+</g>
+
+
+<path d="M521 232 V258 H125" fill="none" stroke="#475569" stroke-width="1.6"/>
+<path d="M125 232 V272" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+
+<rect x="30" y="276" width="190" height="34" rx="8" fill="#fff" stroke="#475569" stroke-width="1.4"/>
+<text x="125" y="298" text-anchor="middle" font-size="13" fill="#1e293b">Predicted return r̂</text>
+<path d="M220 293 H262" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+<rect x="266" y="276" width="190" height="34" rx="8" fill="#fff" stroke="#475569" stroke-width="1.4"/>
+<text x="361" y="298" text-anchor="middle" font-size="13" fill="#1e293b">Predicted close</text>
+<path d="M456 293 H498" stroke="#475569" stroke-width="1.6" marker-end="url(#pipeArrow)"/>
+<rect x="502" y="276" width="190" height="34" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.4"/>
+<text x="597" y="298" text-anchor="middle" font-size="13" fill="#1e293b">Price and return metrics</text>
+</svg>

@@ -1,6 +1,6 @@
 # Results
 
-The headline tables and figures are in the [README](../README.md). This document gives the numbers behind the reading in the [README](../README.md) and the checks made on the strong scores. Scores are defined in the [Metrics document](METRICS.md), the task in the [Problem document](PROBLEM.md) and the methods in the [Methods document](METHODS.md). Unless stated otherwise, the figures are for the full test split, the three-seed means, and the return metrics.
+The headline tables are in the [README](../README.md). This document gives the checks on the strong scores and the other numbers behind them. Scores are defined in the [Metrics document](METRICS.md), the task in the [Problem document](PROBLEM.md) and the methods in the [Methods document](METHODS.md). Unless stated otherwise, the figures are for the full test split, the three-seed means, and the return metrics.
 
 ## 1. Return RMSE against naive
 
@@ -23,7 +23,7 @@ The headline tables and figures are in the [README](../README.md). This document
 
 - Price metrics move much less than the return metrics. On the 90-stock subset, naive has price MAPE 0.02164, within 0.4% of the best method, GRU (0.02157). LightGBM ties naive at the precision shown.
 - Price RMSE is dominated by high-priced tickers.
-- The differences between methods are small in absolute terms. The radar figures show relative position within a scope only, and print the raw ranges under each figure.
+- The differences between methods are small in absolute terms.
 
 ## 3. Direction accuracy
 
@@ -71,11 +71,6 @@ A return R² of 0.1 and a direction accuracy of 0.59 are high for next-day retur
 
 ## 9. Example predictions
 
-- The example figures show HOSE:VCI over its last 60 trading days, from seed 0 of the main run, not the three-seed means above. The predictions file reproduces the seed-0 return RMSE of every method in the results table exactly.
+- The HOSE:VCI example (last 60 trading days) uses seed 0 of the main run, not the three-seed means above. The predictions file reproduces the seed-0 return RMSE of every method in the results table exactly.
 - The stock was chosen from the 90-stock subset without looking at the results.
 - One stock over a short range is an illustration, not evidence.
-
-## 10. Demo model
-
-- On the earlier data on which the demo weights were trained, the demo's next-day close error was far larger than naive's. For example, over the last 200 days the MAPE was 0.36 for HNX:BID against 0.015 for the naive forecast.
-- The demo's checkpoints have not been re-evaluated on the current data. They should not be used for decisions.

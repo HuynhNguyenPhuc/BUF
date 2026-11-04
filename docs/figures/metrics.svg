@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" font-family="system-ui,-apple-system,Segoe UI,sans-serif" role="img" aria-labelledby="metT metD">
+<title id="metT">Price errors, return errors and direction accuracy</title>
+<desc id="metD">Left: one illustrative prediction on a price line, with the price error and the return error. Right: predicted against actual return, with the quadrants where the sign matches.</desc>
+<defs>
+<marker id="metArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker>
+</defs>
+<rect x="8" y="8" width="704" height="324" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+
+<text x="190" y="34" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">One prediction, two scales</text>
+<path d="M30 190 H350" stroke="#475569" stroke-width="1.6" marker-end="url(#metArrow)"/>
+<text x="350" y="212" text-anchor="end" font-size="12" fill="#475569">price</text>
+
+<g stroke="#475569" stroke-width="1.6"><path d="M80 182 V198"/><path d="M160 182 V198"/><path d="M280 182 V198"/></g>
+<text x="80" y="220" text-anchor="middle" font-size="13" fill="#1e293b">previous</text>
+<text x="80" y="236" text-anchor="middle" font-size="13" fill="#1e293b">close 25.0</text>
+<text x="160" y="220" text-anchor="middle" font-size="13" fill="#2563eb">predicted</text>
+<text x="160" y="236" text-anchor="middle" font-size="13" fill="#2563eb">25.2</text>
+<text x="280" y="220" text-anchor="middle" font-size="13" fill="#db2777">actual</text>
+<text x="280" y="236" text-anchor="middle" font-size="13" fill="#db2777">25.5</text>
+
+<path d="M80 150 H280" stroke="#db2777" stroke-width="2"/><path d="M80 144 V156 M280 144 V156" stroke="#db2777" stroke-width="2"/>
+<text x="180" y="138" text-anchor="middle" font-size="13" fill="#db2777">actual return r ≈ +2.0%</text>
+<path d="M80 110 H160" stroke="#2563eb" stroke-width="2"/><path d="M80 104 V116 M160 104 V116" stroke="#2563eb" stroke-width="2"/>
+<text x="120" y="98" text-anchor="middle" font-size="13" fill="#2563eb">predicted r̂ ≈ +0.8%</text>
+
+<path d="M160 258 H280" stroke="#475569" stroke-width="2"/><path d="M160 252 V264 M280 252 V264" stroke="#475569" stroke-width="2"/>
+<text x="220" y="282" text-anchor="middle" font-size="13" fill="#1e293b">price error: −0.30</text>
+<text x="220" y="300" text-anchor="middle" font-size="13" fill="#1e293b">return error: −0.012 (log units)</text>
+<text x="190" y="322" text-anchor="middle" font-size="12" fill="#475569">illustrative numbers</text>
+
+<path d="M372 40 V320" stroke="#e2e8f0"/>
+
+<text x="540" y="34" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Direction accuracy</text>
+<rect x="540" y="60" width="130" height="100" fill="#dbeafe"/>
+<rect x="410" y="160" width="130" height="100" fill="#dbeafe"/>
+<rect x="410" y="60" width="130" height="100" fill="#fce7f3"/>
+<rect x="540" y="160" width="130" height="100" fill="#fce7f3"/>
+<path d="M410 160 H670" stroke="#475569" stroke-width="1.6"/>
+<path d="M540 60 V260" stroke="#475569" stroke-width="1.6"/>
+<text x="605" y="82" text-anchor="middle" font-size="12" fill="#1e293b">same sign</text>
+<text x="475" y="252" text-anchor="middle" font-size="12" fill="#1e293b">same sign</text>
+<text x="475" y="82" text-anchor="middle" font-size="12" fill="#1e293b">opposite sign</text>
+<text x="605" y="252" text-anchor="middle" font-size="12" fill="#1e293b">opposite sign</text>
+<g fill="#2563eb"><circle cx="580" cy="122" r="4"/><circle cx="624" cy="96" r="4"/><circle cx="500" cy="196" r="4"/><circle cx="452" cy="224" r="4"/></g>
+<g fill="#db2777"><circle cx="486" cy="112" r="4"/><circle cx="600" cy="214" r="4"/></g>
+<text x="540" y="282" text-anchor="middle" font-size="13" fill="#1e293b">actual return r</text>
+<text x="396" y="164" text-anchor="middle" font-size="13" fill="#1e293b" transform="rotate(-90 396 164)">predicted return r̂</text>
+<text x="540" y="304" text-anchor="middle" font-size="12" fill="#475569">A forecast of exactly 0 lies on the horizontal axis,</text>
+<text x="540" y="320" text-anchor="middle" font-size="12" fill="#475569">so it is never counted as correct.</text>
+</svg>

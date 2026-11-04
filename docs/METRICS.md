@@ -32,7 +32,7 @@ These are the main metrics, because the task target is the return.
 |---|---|
 | Return RMSE | $\sqrt{\frac{1}{N}\sum (\hat r_t - r_t)^2}$ |
 | Return $R^2$ | $1 - \frac{\sum (\hat r_t - r_t)^2}{\sum (r_t - \bar r)^2}$ |
-| Direction accuracy | The share of samples with $\operatorname{sign}(\hat r_t) = \operatorname{sign}(r_t)$ |
+| Direction accuracy | The share of samples with $\mathrm{sign}(\hat r_t) = \mathrm{sign}(r_t)$ |
 
 - Return $R^2$ measures the gain over always predicting the mean test return. A value near 0 means no gain and a negative value means a loss. The naive forecast scores just below 0.
 - Samples with $r_t = 0$ are excluded from direction accuracy. A forecast of exactly 0 never has a sign that matches, so the naive forecast scores 0 by construction; it should be compared with the other methods only through the other metrics. Samples with an unchanged close are therefore not scored (21.4% of the test returns). A balanced random guess scores about 0.5, but the proper reference is the majority-sign guess: if a share $p$ of the non-zero returns is positive, always predicting the more frequent sign scores $\max(p, 1-p)$. On the full test split $p$ is 48.6%, so that reference is 51.4%; on the 90-stock subset $p$ is 48.5% and the reference is 51.5%. Both references are computed on the test set after the fact, so they are reference accuracies, not baselines fitted on the training data.

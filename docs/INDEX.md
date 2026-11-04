@@ -22,11 +22,8 @@ This document maps the concepts of the Problem, Methods, Metrics and Results doc
 | Data loading and filter | `load_frame` in `scripts/benchmark.py` (keeps each duplicated ticker once, in the order HOSE, HNX, UPCOM; series with fewer than `MIN_ROWS` rows are dropped) |
 | 90-stock subset | `draw_subset` in `scripts/benchmark.py`; `SUBSET_PER_EXCHANGE = 30`; `numpy.random.default_rng(0)`; only stocks with more than `L + 1` rows are eligible |
 | Training settings | `BATCH`, `EVAL_BATCH`, `PATIENCE` in `scripts/benchmark.py`; epochs and boosting rounds from `--epochs` and `--rounds` |
-| Demo | `app.py`, with `data/loader.py` and `checkpoints/<EXCHANGE>.pt` (`HNX.pt`, `HOSE.pt`, `UPCOM.pt`) |
 | Weights conversion (Keras `.h5` to PyTorch) | `scripts/convert.py` |
 | Price refresh | `scripts/fetch_history.py` |
-
-The demo's model is `LSTMForecaster` built with `units=64`; its input is the raw prices in the order open, close, high, low (`FEATURES` in `data/loader.py`). `GRUForecaster` has no demo checkpoint.
 
 ## 2. Data
 
@@ -51,7 +48,7 @@ The demo's model is `LSTMForecaster` built with `units=64`; its input is the raw
 |---|---|
 | `results_full_test.png`, `results_subset_test.png` | `scripts/plot_results.py` (reads `results_summary.csv` and `predictions_test.csv.gz`) |
 | `radar_full_test.png`, `radar_subset_test.png` | `scripts/plot_radar.py` (min-max scaling within each scope; naive not drawn) |
-| `predictions_price.png`, `predictions_return.png` | `scripts/plot_predictions.py`; the [README](../README.md) example uses `--stock HOSE:VCI --seed 0 --days 60` (defaults: `HOSE:VNM`, seed 0, 60 days) |
+| `predictions_price.png`, `predictions_return.png` | `scripts/plot_predictions.py` (defaults: `--stock HOSE:VNM --seed 0 --days 60`; the README example uses `--stock HOSE:VCI`) |
 | `example.png` | `scripts/plot_example.py <output path>` (sample of HOSE:VNM) |
 | `task.svg`, `split.svg`, `metrics.svg`, `pipeline.svg` | Hand-drawn diagrams, not generated |
 | `networks.svg` | `scripts/draw_methods.py` (overview of the five architectures; `--networks` sets the output path) |
@@ -62,7 +59,6 @@ The demo's model is `LSTMForecaster` built with `units=64`; its input is the raw
 ```bash
 pip install -r requirements.txt
 python -m scripts.benchmark --data data --out results     # --quick for a smoke test
-python app.py                                             # demo
 ```
 
 Options of `scripts/benchmark.py`:

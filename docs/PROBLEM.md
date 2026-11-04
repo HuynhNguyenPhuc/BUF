@@ -80,7 +80,6 @@ The naive forecast predicts $\hat r_t = 0$, that is, tomorrow's close equals tod
 - Only the one-recorded-observation-ahead horizon is considered (the elapsed time between observations varies), and no trading rule, transaction cost or portfolio is modelled.
 - Very large returns are not necessarily ordinary one-day moves. Among test returns of more than 50% in absolute value, all follow a gap of more than four days between recorded days and only 12% are reversed by at least half on the next day; among those above 20%, 63% follow such a gap. Their causes remain undetermined and may include multi-session movements, missing observations, corporate actions or data errors. No adjustment is applied.
 - Prices are not checked for corporate actions. An unadjusted split or a change of units appears as a very large return.
-- The demo model, which predicts open, high, low and close from raw prices, is a separate formulation and is not part of the benchmark. Its weights come from an earlier model that was trained on an earlier version of the price tables, and which of the demo's predictions are in-sample is not documented. On that earlier data, its next-day close error on the stocks checked was much larger than the naive forecast's. It has not been re-evaluated on the current data and should not be used for decisions.
 
 ## References
 

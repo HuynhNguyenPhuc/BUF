@@ -1,6 +1,6 @@
 # BUF
 
-BUF benchmarks ten methods that forecast the next recorded day's log return of Vietnamese stocks (HNX, HOSE, UPCOM) from the last 50 days, on a chronological split. The repository also holds a Gradio demo of a pretrained LSTM, which is not validated for forecasting.
+BUF benchmarks ten methods that forecast the next recorded day's log return of Vietnamese stocks (HNX, HOSE, UPCOM) from the last 50 days, on a chronological split.
 
 Read the documents in this order:
 
@@ -57,15 +57,10 @@ Test period 1 June 2023 to 2 November 2026 (724,798 samples). Rows are sorted by
 
 <p align="center">
   <img src="docs/figures/radar_full_test.png" width="900" alt="One radar chart per method on five axes: return RMSE reduction, return R2, direction accuracy, price MAPE reduction and median per-ticker MAPE reduction, full test split">
-  <br><em>Figure 3. The same scores as one radar per method (full test split; subset: <a href="docs/figures/radar_subset_test.png">docs/figures/radar_subset_test.png</a>). Each axis is min-max scaled within its scope, so the chart shows relative position only. Radars of different scopes are not comparable.</em>
+  <br><em>Figure 3. The same scores as one radar per method, full test split. Each axis is min-max scaled within its scope, so the chart shows relative position only. Radars of different scopes are not comparable.</em>
 </p>
 
-**Reading the results**
-
-- Every learned method has a lower return RMSE than naive. The GRU reduction is 6.0% on seed 0, and LSTM is almost the same (Results §1).
-- Direction accuracy is read against the majority-sign reference of 51.4% on the full test split (51.5% on the subset) (Metrics §3). The strong scores have been checked only in part (Results §6).
-
-**Example predictions.** HOSE:VCI over its last 60 trading days, from seed 0 of the main run (Results §9).
+**Example predictions.** HOSE:VCI over its last 60 trading days, from seed 0 of the main run.
 
 <p align="center">
   <img src="docs/figures/predictions_price.png" width="760" alt="Actual close of HOSE:VCI and the next-day close predicted by ten methods over 60 days">
@@ -78,8 +73,6 @@ Test period 1 June 2023 to 2 November 2026 (724,798 samples). Rows are sorted by
 </p>
 
 Caveats on heavy tails, data coverage, duplicated tickers and the training budget are in [`docs/RESULTS.md`](docs/RESULTS.md) and [`docs/PROBLEM.md`](docs/PROBLEM.md).
-
-**Demo.** The demo LSTM predicts the next day's open, close, high and low. On the earlier data it was trained on, its close error was far larger than naive's, and it has not been re-evaluated. Do not use it for decisions (Problem §6, Results §10).
 
 ## Run
 
